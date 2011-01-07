@@ -1,0 +1,42 @@
+
+<ul>
+  <li><%= link_to "Enter New Temperature", new_temperature_path %></li>
+  <li><%= link_to "Display The Results", temperatures_path %></li>
+  <li><%= link_to "Print The Data", root_path %></li>
+</ul>
+
+<table>
+  <tr>
+    <td><strong>Current Temperature</strong></td>
+    <td><%= @temperature.temperature %></td>
+  </tr>
+  <tr>
+    <td><strong>Current Time</strong></td>
+    <td><%= Time.now %></td>  
+  </tr>  
+  <tr>
+    <td><strong>Current Date</strong></td>
+    <td><%= Date.current %></td>
+  </tr>  
+  <tr>
+    <td><strong>Recorded at</strong></td>
+    <td><%= @temperature.created_at %></td>
+  </tr>
+  <tr>
+    <td><strong>Average Temperature</strong></td>
+    <td><%= @temperature.average_temperature %></td>
+  </tr>
+  <tr>
+    <td><strong>Highest Temperature</strong></td>
+    <td><%= @temperature.highest_temperature %></td> 
+  </tr>
+  <tr>
+    <td><strong>Lowest Temperature</strong></td>
+    <td><%= @temperature.lowest_temperature %></td> 
+    <td><%#= link_to 'Show', temperature %></td>
+    <td><%#= link_to 'Edit', edit_temperature_path(temperature) %></td>
+    <td><%#= link_to 'Destroy', temperature, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  
+    
+</table>
