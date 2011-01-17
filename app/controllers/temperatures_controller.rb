@@ -2,7 +2,7 @@ class TemperaturesController < ApplicationController
   # GET /temperatures
   # GET /temperatures.xml
   def index
-    @temperatures = Temperature.all
+    @temperatures = Temperature.find(:all, :order => 'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,7 +27,7 @@ class TemperaturesController < ApplicationController
     @temperature = Temperature.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html  # new.html.erb
       format.xml  { render :xml => @temperature }
     end
   end
@@ -44,7 +44,8 @@ class TemperaturesController < ApplicationController
 
     respond_to do |format|
       if @temperature.save
-        format.html { redirect_to(@temperature, :notice => 'Temperature was successfully created.') }
+#        format.html { redirect_to(@temperature, :notice => 'Temperature was successfully created.') }
+        format.html { redirect_to(root_path, :notice => 'Temperature was successfully created.') }
         format.xml  { render :xml => @temperature, :status => :created, :location => @temperature }
       else
         format.html { render :action => "new" }
@@ -60,7 +61,7 @@ class TemperaturesController < ApplicationController
 
     respond_to do |format|
       if @temperature.update_attributes(params[:temperature])
-        format.html { redirect_to(@temperature, :notice => 'Temperature was successfully updated.') }
+        format.html { redirect_to(root_path, :notice => 'Temperature was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

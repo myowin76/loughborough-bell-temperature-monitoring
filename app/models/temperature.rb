@@ -15,4 +15,13 @@ class Temperature < ActiveRecord::Base
   def lowest_temperature
     Temperature.minimum(:temperature)
   end
+  
+  def self.get_live_new_temperature
+    
+    Temperature.create!({
+        :temperature => rand(100) + 1 ,
+        :created_at => Time.now
+    })
+
+  end
 end

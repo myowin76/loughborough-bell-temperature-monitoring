@@ -1,25 +1,22 @@
-<h1>Listing temperatures</h1>
+<div class="content-header">
+	<h1 title="">Listing Temperatures</h1>
+</div>
 
 <table>
   <tr>
     <th>Temperature</th>
-    <th>Current Time</th>
-    <th>Current Date</th>
     <th>Recorded at</th>
   </tr>
 
 <% @temperatures.each do |temperature| %>
   <tr>
     <td><%= temperature.temperature %></td>
-    <td><%= Time.now %></td>
-    <td><%= Date.current %></td>
     <td><%= temperature.created_at %></td>  
-    <td><%= temperature.average_temperature %></td>
-    <td><%= temperature.highest_temperature %></td> 
-    <td><%= temperature.current_temperature[:temperature] %></td> 
+<!--
     <td><%#= link_to 'Show', temperature %></td>
     <td><%#= link_to 'Edit', edit_temperature_path(temperature) %></td>
     <td><%#= link_to 'Destroy', temperature, :confirm => 'Are you sure?', :method => :delete %></td>
+-->
   </tr>
 <% end %>
 </table>

@@ -1,42 +1,26 @@
 
-<ul>
-  <li><%= link_to "Enter New Temperature", new_temperature_path %></li>
-  <li><%= link_to "Display The Results", temperatures_path %></li>
-  <li><%= link_to "Print The Data", root_path %></li>
-</ul>
+				<div class="content-header">
+					<h1 title="Longhorns">Temperature Monitor</h1>
+					<div class="date"><%= Time.now.strftime("%A, %d %B, %Y,   %H %M %p") %></div>
+				</div>
+				
+				<div class="content-details">
+					<div class="time" <% if @temperature.temperature > 60 %> style="color:red;" <% end %>><strong>Current Temperature: </strong><%= @temperature.temperature %> *C</div>
+					 <% if @temperature.temperature > 60 %> 
+					<div class="location" style="text-decoration: underline;"><strong><%= link_to "Adjust Temperature", edit_temperature_path(@temperature) %></strong>  </div>
+					<% end %>
+					<div class="time"><strong>Recorded At: </strong><%= @temperature.created_at.strftime("%H:%M:%S - %d/%b/%y") %></div>
+          <div class="time"><strong>Highest Temperature: </strong><%= @temperature.highest_temperature %> *C</div>
+          <div class="time"><strong>Lowest Temperature: </strong><%= @temperature.lowest_temperature %> *C</div>
+          <div class="time"><strong>Average Temperature: </strong><%= @temperature.average_temperature %> *C</div>					
 
-<table>
-  <tr>
-    <td><strong>Current Temperature</strong></td>
-    <td><%= @temperature.temperature %></td>
-  </tr>
-  <tr>
-    <td><strong>Current Time</strong></td>
-    <td><%= Time.now %></td>  
-  </tr>  
-  <tr>
-    <td><strong>Current Date</strong></td>
-    <td><%= Date.current %></td>
-  </tr>  
-  <tr>
-    <td><strong>Recorded at</strong></td>
-    <td><%= @temperature.created_at %></td>
-  </tr>
-  <tr>
-    <td><strong>Average Temperature</strong></td>
-    <td><%= @temperature.average_temperature %></td>
-  </tr>
-  <tr>
-    <td><strong>Highest Temperature</strong></td>
-    <td><%= @temperature.highest_temperature %></td> 
-  </tr>
-  <tr>
-    <td><strong>Lowest Temperature</strong></td>
-    <td><%= @temperature.lowest_temperature %></td> 
-    <td><%#= link_to 'Show', temperature %></td>
-    <td><%#= link_to 'Edit', edit_temperature_path(temperature) %></td>
-    <td><%#= link_to 'Destroy', temperature, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  
-    
-</table>
+  					<% if @temperature.updated_at > @temperature.created_at %>
+    					<div class="time">
+                <strong>Updated at</strong>
+                <%= @temperature.updated_at.strftime("%H:%M:%S - %d/%b/%y") %>
+              </div>
+            <% end %>
+
+				</div>
+
+  <%# => = link_to "get new temperature", Temperature.get_live_new_temperature %>

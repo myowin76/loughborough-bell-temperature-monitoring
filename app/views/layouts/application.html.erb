@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Loughborough</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+
+  <meta name="description" content="Loughborough Bell Foundry" />
+  <meta name="keywords" content="Loughborough Bell Foundry" />
+  <meta name="copyright" content="Loughborough Bell Foundry" />
+
+  <script type="text/javascript" src="/javascripts/cufon-yui.js"></script>
+  <script type="text/javascript"  src="/javascripts/Dax_500.font.js"></script>
+  <script type="text/javascript" src="/javascripts/cufon.js"></script>
+  <!--[if IE 6]>
+  		<link rel="stylesheet" type="text/css" href="/css/ie-6.css" />
+  <![endif]-->
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <%= yield(:head) %>
 </head>
 <body>
-<h1>Loughborough Bell foundry</h1>
-<h2>Furnace System Main Menu</h2>
-  <li><%= link_to "Main Menu", root_path %></li>
-<%= yield %>
+
+  <div class="wrap">
+  	<div id="header">
+  		<h1 id="logo">Loughborough Temperature Monitoring</h1>		
+  	</div>	
+  </div>
+	<div class="clearfix"></div>
+
+	<div class="wrap">
+		<div class="content-top"></div>
+		<div class="content-mid">
+			<div class="left-sidebar">
+				<div class="left-nav">
+					<h3>Main Menu</h3>
+					<ul>
+						<li><%= link_to "Temperature Monitor", root_path %></li>
+						<li><%= link_to "Enter New Temperature", new_temperature_path %></li>
+						<li><%= link_to "Display The Results", temperatures_path %></li>
+						<li><a href="#" title="Print The Data">Print The Data</a></li>						
+					</ul>
+				</div>
+			</div>
+			<div class="content-right">		
+        <%= yield %>
+      </div>
+    </div>
+		<div class="content-bottom"></div>
+    </div>    
+  	<div class="clearfix"></div>
+  	<div class="footer-wrap">
+  		<div class="wrap">
+  			<div class="copyright">Developer: Aung-Myo Win</div>
+  		</div>
+  	</div>
 
 </body>
 </html>

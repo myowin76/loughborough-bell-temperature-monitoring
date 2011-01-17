@@ -1,0 +1,37 @@
+/*18 June 2010 Aung*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,pre,form,fieldset,input,textarea,p,blockquote{ margin:0; padding:0;}
+h1,h2,h3,h4 { font-size:100%; font-weight:normal; }
+q:before,q:after { content:''; }
+fieldset,img { border:0 !important; }
+a{ outline:none; text-decoration:none;}
+ol,ul {	list-style:none; }
+.clearfix {clear:both;display:block;margin-left:auto;margin-right:auto;padding-top:7px;}
+
+body{font-family: Arial;font-size: 16px;background:url(../images/background.jpg) repeat-x #fdfdfd;}
+.wrap {margin-left:auto; margin-right:auto;width:870px;}
+#header{height:120px;}
+#logo{height:36px;width:100%;float:left;padding-top:48px;text-align:center;font-size:30px;}
+#header .right-box{background:url(../images/img1.jpg) no-repeat; float:right;width:120px;height:91px;margin-top:3px;}
+.left-sidebar{width:246px;float:left;}
+.left-nav{float:left;}
+.left-nav h3{color:#fe409f;border-bottom:1px solid #dadada;padding-left:10px;padding:2px 0 8px 10px;}
+.left-nav li{width:246px; border-top:1px solid #ffffff; border-bottom:1px solid #dadada;height:33px;}
+.left-nav li a{padding:8px 10px;display:block;color:#404040;}
+.left-nav li a:hover{background-color:#fee4f1;height:16px;}
+.left-nav li a.active{}
+
+/* content */
+
+.content-top{background:url(../images/content-top-bg.png) no-repeat;height:16px;width:870px;float:left;}
+.content-mid{background:url(../images/content-mid-bg.png) repeat-y;min-height:450px;width:850px;padding: 0 10px;color:#404040;float:left;}
+.content-bottom{background:url(../images/content-bottom-bg.png) no-repeat;height:17px;width:870px;float:left;}
+
+.content-right{padding:10px 10px 10px 25px;width:565px;float:left;}
+.content-header{width:100%; border-bottom:1px solid #bcb9ba;padding-bottom:5px;line-height:28px;}
+.content-header h1{font-size:26px; color: #FE409F;}
+.content-header .date{font-size:14px;color:#999999;}
+.content-details{padding: 20px 0;line-height:18px;}
+.content-details .time{padding-bottom:15px;}
+/* footer */
+.footer-wrap{height:27px; width:100%;background:url(../images/footer-bg.jpg) repeat-x;}
+.footer-wrap .copyright{text-align:center;padding-top:5px;color:#666666;}
